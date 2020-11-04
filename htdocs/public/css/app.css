@@ -1,0 +1,9 @@
+.container {
+  margin-top: 30px;
+}
+
+.table-active td{
+  background: #efefef !important;
+  border-bottom: 5px solid #555 !important;
+}
+
