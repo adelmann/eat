@@ -76,14 +76,22 @@
                                 Neue Zeiten eintragen
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <hr>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link @if ($position == 'export') active @endif" href="{{ route('export') }}">
-                                Daten exportieren
-                            </a>
-                        </li>
+
+                        @if (Auth::user()->admin == '1')
+                            <li class="nav-item">
+                                <hr>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link @if ($position == 'export') active @endif" href="{{ route('export') }}">
+                                    Daten exportieren
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link @if ($position == 'adminuser') active @endif" href="{{ route('adminuser') }}">
+                                    Benutzer
+                                </a>
+                            </li>
+                        @endif
                     </ul>
                 </div>
             @endif

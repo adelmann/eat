@@ -41,3 +41,5 @@ Route::get('/export/exportKindergardenMonth', 'export@exportKindergardenMonth')-
 Route::get('/export/exportKindergardenYearParents', 'export@exportKindergardenYearParents')->name('exportKindergardenYearParents');
 Route::post('/export/range', 'export@exportRange')->name('exportRange');
 
+//admin
+Route::get('/adminuser', 'admin@adminuser')->name('adminuser');
