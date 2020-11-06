@@ -53,6 +53,10 @@
                             </div>
                         </div>
                     </form>
+                    <div class="text-info">
+                        <hr>
+                        Ein Login ist nur mit aktiviertem Benutzerkonto möglich. Sofern noch kein Benutzerkonto existiert kann dieses  <a href="{{ route('register') }}">hier</a> angelegt werden. Im Anschluss muss vor dem Login dieses erst durch einen Admin freigeschaltet werden.
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-8">
+    <div class="col-12 col-md-8">
         @isset($EditEntry)
             <form method="POST" action="{{ route('updateEntry') }}">
                 <input type="hidden" name="entryId" value="{{$EditEntry->id}}" />
@@ -105,10 +105,10 @@
             </div>
 
         </form>
-
+        <br>
     </div>
 
-    <div class="col-4">
+    <div class="col-12 col-md-4">
         <div class="card">
             <div class="card-header">
                 <b>Infos:</b>

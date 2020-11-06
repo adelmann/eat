@@ -69,6 +69,11 @@
                             </div>
                         </div>
                     </form>
+                    <div class="text-info">
+                        <hr>
+                        Mit der Registrierung wird ausschließlich ein Benutzerkonto im System angelegt. Dieses ist zu begin noch deaktiviert und muss durch einen Admin freigeschaltet werden.<br>
+                        Bitte eine Mail an Andi (<a href="mailto:info@adelmann-solutions.com">schreiben</a> mit der Bitte das Konto zu aktivieren.
+                    </div>
                 </div>
             </div>
         </div>

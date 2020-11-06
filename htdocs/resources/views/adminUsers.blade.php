@@ -28,14 +28,22 @@
                     <tr>
                         <td>{{$User->name}}</td>
                         <td>
-                            <a href="{{ route('admintoggleActive', ['userid' => $User->id]) }}" class="btn btn-small btn-sm  @if ($User->active == '1') btn-primary @else btn-danger @endif">
-                                @if ($User->active == '1') Aktiv @else Inaktiv @endif
-                            </a>
+                            @if ($User->id != '1')
+                                <a href="{{ route('admintoggleActive', ['userid' => $User->id]) }}" class="btn btn-small btn-sm  @if ($User->active == '1') btn-primary @else btn-danger @endif">
+                                    @if ($User->active == '1') Aktiv @else Inaktiv @endif
+                                </a>
+                            @else
+                                Aktiv
+                            @endif
                         </td>
                         <td>
-                            <a href="{{ route('admintoggleAdmin', ['userid' => $User->id]) }}" class="btn btn-small btn-sm  @if ($User->admin == 'active') btn-primary @else btn-danger @endif">
-                                @if ($User->admin == '1') Admin @else User @endif
-                            </a>
+                            @if ($User->id != '1')
+                                <a href="{{ route('admintoggleAdmin', ['userid' => $User->id]) }}" class="btn btn-small btn-sm  @if ($User->admin == 'active') btn-primary @else btn-danger @endif">
+                                    @if ($User->admin == '1') Admin @else User @endif
+                                </a>
+                            @else
+                                Admin
+                            @endif
                         </td>
                         <td>
                             @if ($User->id != 1)
