@@ -19,7 +19,7 @@
                 <th scope="col">Name</th>
                 <th scope="col">Freigeschaltet</th>
                 <th scope="col">Admin</th>
-                <th scope="col">Aktion Toggle</th>
+                <th scope="col">Löschen?</th>
             </tr>
             </thead>
             <tbody>
@@ -27,12 +27,24 @@
                 @foreach($Users as $indexKey=>$User)
                     <tr>
                         <td>{{$User->name}}</td>
-                        <td>@if ($User->active == 'active') Aktiv @else Inaktiv @endif</td>
-                        <td>@if ($User->admin == '1') Admin @else Benutzer @endif</td>
                         <td>
-                            <a href="" class="btn btn-small btn-sm btn-danger">Admin</a>
-                            <a href="" class="btn btn-small btn-sm btn-danger">Admin</a>
-
+                            <a href="{{ route('admintoggleActive', ['userid' => $User->id]) }}" class="btn btn-small btn-sm  @if ($User->active == '1') btn-primary @else btn-danger @endif">
+                                @if ($User->active == '1') Aktiv @else Inaktiv @endif
+                            </a>
+                        </td>
+                        <td>
+                            <a href="{{ route('admintoggleAdmin', ['userid' => $User->id]) }}" class="btn btn-small btn-sm  @if ($User->admin == 'active') btn-primary @else btn-danger @endif">
+                                @if ($User->admin == '1') Admin @else User @endif
+                            </a>
+                        </td>
+                        <td>
+                            @if ($User->id != 1)
+                            <a href="{{ route('adminDeleteUser', ['userid' => $User->id]) }}" class="btn btn-small btn-sm btn-danger">
+                                x
+                            </a>
+                            @else
+                                -
+                            @endif
                         </td>
                     </tr>
                 @endforeach

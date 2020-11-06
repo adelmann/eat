@@ -27,6 +27,7 @@ class owntimes extends Controller
      */
     public function index()
     {
+        Controller::isActive(Auth::user());
         $BookedTimes    = bookedTimes::query()
             ->join('time_categories','time_categories.id','=','booked_times.catid')
             ->select('booked_times.*', 'time_categories.name as catname')
@@ -82,6 +83,7 @@ class owntimes extends Controller
      * @throws \Exception
      */
     public function delete($id) {
+        Controller::isActive(Auth::user());
         $Entry2Delete = bookedTimes::query()->where([
             ['userid',Auth::user()->id],
             ['id', $id]
@@ -98,6 +100,7 @@ class owntimes extends Controller
      * @throws \Exception
      */
     public function edit($id) {
+        Controller::isActive(Auth::user());
         $Categories             = timeCategories::all();
         $CategoriesDescription  = timeCategories::all();
 

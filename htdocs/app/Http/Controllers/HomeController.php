@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\bookedTimes;
 use App\timeCategories;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 
 class HomeController extends Controller
@@ -26,7 +27,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-
+        Controller::isActive(Auth::user());
         $actDateTime 	    = date('Y-m-d H:i:s');
         $OneYearPast        = date('Y-01-01');
         $firstDayOfActMonth = date('Y-m-01', strtotime($actDateTime));

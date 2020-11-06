@@ -27,6 +27,7 @@ class addtime extends Controller
      */
     public function index()
     {
+        Controller::isActive(Auth::user());
         $Categories             = timeCategories::all();
         $CategoriesDescription  = timeCategories::all();
 
@@ -39,6 +40,7 @@ class addtime extends Controller
 
     public function addnew(Request $request)
     {
+        Controller::isActive(Auth::user());
         $Categories     = timeCategories::all();
 
         $category       = $request->get('category');
@@ -80,6 +82,7 @@ class addtime extends Controller
     }
 
     public function updateEntry(Request $request) {
+        Controller::isActive(Auth::user());
         $Categories     = timeCategories::all();
 
         $entryId        = $request->get('entryId');

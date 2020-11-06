@@ -21,6 +21,7 @@ class export extends Controller
      */
     public function index()
     {
+        Controller::isActive(Auth::user());
         if (Auth::user()->admin == 1) {
             return view('export');
         } else {
@@ -32,6 +33,7 @@ class export extends Controller
      * @return \Symfony\Component\HttpFoundation\StreamedResponse
      */
     public function exportKindergardenYearParents() {
+        Controller::isActive(Auth::user());
         if (Auth::user()->admin == 1) {
             $users       = User::all();
             $actDateTime = date('Y-m-d H:i:s');
@@ -87,6 +89,7 @@ class export extends Controller
      * @return \Symfony\Component\HttpFoundation\StreamedResponse
      */
     public function kindergardenYear() {
+        Controller::isActive(Auth::user());
 
         if (Auth::user()->admin == 1) {
             $actDateTime 	    = date('Y-m-d H:i:s');
@@ -146,6 +149,7 @@ class export extends Controller
      * @return \Symfony\Component\HttpFoundation\StreamedResponse
      */
     public function exportKindergardenMonth() {
+        Controller::isActive(Auth::user());
         if (Auth::user()->admin == 1) {
             $actDateTime 	    = date('Y-m-d H:i:s');
             $firstDayOfActMonth = date('Y-m-01', strtotime($actDateTime));
@@ -199,6 +203,7 @@ class export extends Controller
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector|\Symfony\Component\HttpFoundation\StreamedResponse
      */
     public function exportRange(Request $request) {
+        Controller::isActive(Auth::user());
         if (Auth::user()->admin == 1) {
             $startDate          = $request->get('startDate');
             $endDate            = $request->get('endDate');

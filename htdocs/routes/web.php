@@ -43,3 +43,6 @@ Route::post('/export/range', 'export@exportRange')->name('exportRange');
 
 //admin
 Route::get('/adminuser', 'admin@adminuser')->name('adminuser');
+Route::get('/adminuser/toggleActive/{userid}', 'admin@admintoggleActive')->name('admintoggleActive');
+Route::get('/adminuser/admintoggleAdmin/{userid}', 'admin@admintoggleAdmin')->name('admintoggleAdmin');
+Route::get('/adminuser/adminDeleteUser/{userid}', 'admin@adminDeleteUser')->name('adminDeleteUser');
